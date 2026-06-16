@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oswaldo Stream | Inicio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;800&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            /* Fondo con gradiente dinámico y moderno */
+            background: linear-gradient(135deg, #0b0f19 0%, #1a1b41 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Barra superior minimalista */
+        header {
+            width: 100%;
+            padding: 2rem 5%;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Contenedor principal de la agenda */
+        main {
+            width: 100%;
+            max-width: 800px;
+            padding: 2rem 1rem;
+        }
+
+        /* Tarjeta de cristal (Glassmorphism) */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .tournament-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            color: #a3b8cc;
+        }
+
+        .match-info {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .teams {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .live-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #ff4757;
+            font-weight: 700;
+            font-size: 1rem;
+            animation: pulse 2s infinite;
+        }
+
+        .live-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #ff4757;
+            border-radius: 50%;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        /* Opciones de canales */
+        .options-title {
+            font-size: 0.9rem;
+            color: #8fa3b0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .channel-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .channel-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            text-decoration: none;
+            padding: 1.2rem;
+            border-radius: 16px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .channel-btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: all 0.4s ease;
+        }
+
+        .channel-btn:hover {
+            background: rgba(79, 172, 254, 0.15);
+            border-color: #4facfe;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .channel-btn:hover::before {
+            left: 100%;
+        }
+
+        @media (max-width: 600px) {
+            .channel-grid { grid-template-columns: 1fr; }
+            .teams { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Oswaldo Stream</div>
+    </header>
+
+    <main>
+        <div class="glass-card">
+            <div style="text-align: center;">
+                <div class="tournament-badge">Copa Mundial de la FIFA</div>
+            </div>
+
+            <div class="match-info">
+                <div class="teams">Francia vs Senegal</div>
+                <div class="live-indicator">
+                    <div class="live-dot"></div> EN VIVO
+                </div>
+            </div>
+
+            <div class="options-title">Selecciona un servidor de transmisión</div>
+            <div class="channel-grid">
+                <a href="telemundo.html" class="channel-btn">Servidor 1: Telemundo</a>
+                <a href="dsports.html" class="channel-btn">Servidor 2: DSports</a>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
